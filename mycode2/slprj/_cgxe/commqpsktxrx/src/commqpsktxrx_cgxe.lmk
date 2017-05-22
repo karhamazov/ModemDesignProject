@@ -1,0 +1,50 @@
+CC     = "C:\Program Files\MATLAB\R2015a\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2015a\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2015a\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2015a\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"lccstub.obj"\
+	"commqpsktxrx_cgxe.obj"\
+	"m_6ATbE87Fg43sKpJ4PB5SIF.obj"\
+	"m_xuWUxYjSgKTr1UwD3dwTrB.obj"\
+	"m_Uci8vaWUJjlOQLHt7jcgoE.obj"\
+	"m_51kbyQVPDkrPJnyVpDcu4F.obj"\
+	"m_dUm4flaFffo2LNCqX1KSJF.obj"\
+	"commqpsktxrx_cgxe_registry.obj"\
+	"commqpsktxrx_cgxe.def"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libcgxert.lib"\
+	"C:\Program Files\MATLAB\R2015a\lib\win64\libmwipp.lib"\
+	"C:\Program Files\MATLAB\R2015a\extern\lib\win64\microsoft\libcovrt.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2015a\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2015a\extern\include"  -I"C:\Program Files\MATLAB\R2015a\simulink\include"  -I"C:\Program Files\MATLAB\R2015a\rtw\c\src" 
+ 
+
+commqpsktxrx_cgxe.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o commqpsktxrx_cgxe.mexw64 @commqpsktxrx_cgxe.lmko
+lccstub.obj :	"C:\Program Files\MATLAB\R2015a\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2015a\sys\lcc64\lcc64\mex\lccstub.c"
+commqpsktxrx_cgxe.obj :	"commqpsktxrx_cgxe.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "commqpsktxrx_cgxe.c"
+m_6ATbE87Fg43sKpJ4PB5SIF.obj :	"m_6ATbE87Fg43sKpJ4PB5SIF.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_6ATbE87Fg43sKpJ4PB5SIF.c"
+m_xuWUxYjSgKTr1UwD3dwTrB.obj :	"m_xuWUxYjSgKTr1UwD3dwTrB.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_xuWUxYjSgKTr1UwD3dwTrB.c"
+m_Uci8vaWUJjlOQLHt7jcgoE.obj :	"m_Uci8vaWUJjlOQLHt7jcgoE.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_Uci8vaWUJjlOQLHt7jcgoE.c"
+m_51kbyQVPDkrPJnyVpDcu4F.obj :	"m_51kbyQVPDkrPJnyVpDcu4F.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_51kbyQVPDkrPJnyVpDcu4F.c"
+m_dUm4flaFffo2LNCqX1KSJF.obj :	"m_dUm4flaFffo2LNCqX1KSJF.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_dUm4flaFffo2LNCqX1KSJF.c"
+commqpsktxrx_cgxe_registry.obj :	"commqpsktxrx_cgxe_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "commqpsktxrx_cgxe_registry.c"
