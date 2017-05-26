@@ -1,3 +1,5 @@
+%% Source: https://www.mathworks.com/examples/matlab-communications/mw/comm_product-OFDMvsUFMCExample-ufmc-vs-ofdm-modulation
+
 clc; clear; close all;
 s = rng(211); 
 %% Parameters
